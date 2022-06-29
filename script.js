@@ -29,3 +29,17 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
 
 }
+
+let characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+{}|:"<>?~';
+let passwordLength = 8;
+let passwordValue = '';
+
+
+//Create password
+const createPassword = () => {
+  passwordValue = '';
+
+  for (let i = 0; )
+}
+
+
