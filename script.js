@@ -1,8 +1,18 @@
 // Assignment code here
-
+//create constant variables
+//create other variables
+//prompt length of password
+//prompt upper case letters
+//prompt lower case letters
+//prompt numbers 
+//prompt special characters
+//if not selected anything run again
+//generate password 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
+
 
 // Write password to the #password input
 function writePassword() {
@@ -15,3 +25,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function generatePassword() {
+
+}
