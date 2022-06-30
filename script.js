@@ -32,7 +32,7 @@ function writePassword() {
 //generate password based on prompts
 function generatePassword() {
   var password = "";
-  for (let i = 0; i < passwordLength; i++){
+  for (let i = 0; i < characterLength; i++){
     var randomIndex = Math.floor(Math.random() * choiceArray.length);
     password = password + choiceArray[randomIndex];
   }
@@ -42,8 +42,9 @@ function generatePassword() {
 function getPrompts(){//prompt length of password
   choiceArray = [];
 
-  numberofCharacters = parseInt(prompt("How many characters would you like in your password? Choose a number between 8-128."));
-if (isNaN(numberofCharacters) || numberofCharacters < 8 || numberofCharacters > 128) {
+  characterLength = parseInt(prompt("How many characters would you like in your password? Choose a number between 8-128."));
+
+if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
   alert("Please choose a number between 8-128.");
   return false;
 }
@@ -62,27 +63,5 @@ if (confirm("Would you like numbers in your password?")) {
 }
 return true;
 }
-  alert("You've chosen a password of" + numberofCharacters + " characters long.");
-
-}
-
-  //Create password
-const writePassword = () => {
-  passwordValue = '';
-
-   {
-    let number = 
-  }
-
-  password.value = passwordValue;
-}
 
 
-//Events
-
-
-
-
-
-
-//prompt upper case letters
