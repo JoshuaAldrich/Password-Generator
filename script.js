@@ -16,10 +16,14 @@ generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
+  var correctPrompts = getPrompts(); //returns true or false for questions below.
+  if(correctPrompts) {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  }
+  
 
 }
 
@@ -28,6 +32,8 @@ function generatePassword() {
 }
 
 function getPrompts(){//prompt length of password
+  choiceArray = [];
+
   numberofCharacters = parseInt(prompt("How many characters would you like in your password? Choose a number between 8-128."));
 if (isNaN(numberofCharacters) || numberofCharacters < 8 || numberofCharacters > 128) {
   alert("Please choose a number between 8-128.");
@@ -46,8 +52,10 @@ if (confirm("Would you like special characters in your password?")) {
 if (confirm("Would you like numbers in your password?")) {
   choiceArray = choiceArray.concat(numberArray);
 }
-  alert("You've chosen a password of" + numberofCharacters + " characters long.");
+return true;
 }
+  alert("You've chosen a password of" + numberofCharacters + " characters long.");
+
 }
 
   //Create password
