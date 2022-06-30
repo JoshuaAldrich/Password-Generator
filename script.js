@@ -17,18 +17,26 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 function writePassword() {
   var correctPrompts = getPrompts(); //returns true or false for questions below.
-  if(correctPrompts) {
-  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  if (correctPrompts) {
+  var newPassword = generatePassword();
+  passwordText.value = newPassword;
   }
-  
+  else {
+    passwordText.value = "";
 
-}
+  }
+  }
 
 //generate password based on prompts
 function generatePassword() {
+  var password = "";
+  for (let i = 0; i < passwordLength; i++){
+    var randomIndex = Math.floor(Math.random() * choiceArray.length);
+    password = password + choiceArray[randomIndex];
+  }
+  return password;
 }
 
 function getPrompts(){//prompt length of password
@@ -62,9 +70,8 @@ return true;
 const writePassword = () => {
   passwordValue = '';
 
-  for (let i = 0; i < passwordLength; i++) {
-    let number = Math.floor(Math.random() * characters.length);
-    passwordValue += characters.substring(number, number + 1);
+   {
+    let number = 
   }
 
   password.value = passwordValue;
