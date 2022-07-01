@@ -45,8 +45,8 @@ function getPrompts(){//prompt length of password
   characterLength = parseInt(prompt("How many characters would you like in your password? Choose a number between 8-128."));
 
 if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
-  alert("Please choose a number between 8-128.");
-  return false;
+  window.alert("Please choose a number between 8-128.");
+  return getPrompts();
 }
 
 if (confirm("Would you like lowercase letters in your password?")) {
@@ -61,7 +61,13 @@ if (confirm("Would you like special characters in your password?")) {
 if (confirm("Would you like numbers in your password?")) {
   choiceArray = choiceArray.concat(numberArray);
 }
-return true;
+if (choiceArray < 1){
+  window.alert("No choices were made, so I chose numbers for you instead.")
+  choiceArray = choiceArray.concat(numberArray);
 }
+
+return true;
+
+};
 
 
